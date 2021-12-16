@@ -1,0 +1,6 @@
+<configuration>
+    <input>
+        <net-file value="test_sumo.net.xml"/>
+        <route-files value="test_sumo.rou.xml"/>
+    </input>
+</configuration>
