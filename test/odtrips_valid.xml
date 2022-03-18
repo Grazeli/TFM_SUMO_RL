@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2022-03-09 20:31:03 by Eclipse SUMO duarouter Version 1.12.0
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/duarouterConfiguration.xsd">
+
+    <input>
+        <net-file value="circle_network.net.xml"/>
+        <route-files value="odtrips.xml"/>
+    </input>
+
+    <output>
+        <output-file value="odtrips_valid.xml"/>
+        <alternatives-output value="odtrips_valid.alt.xml"/>
+        <write-trips value="true"/>
+    </output>
+
+    <report>
+        <ignore-errors value="true"/>
+    </report>
+
+</configuration>
+-->
+
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+    <trip id="39" depart="4.07" departLane="free" departSpeed="max" fromTaz="taz_1" toTaz="taz_0" from="E16" to="E32"/>
+    <trip id="26" depart="7.20" departLane="free" departSpeed="max" fromTaz="taz_1" toTaz="taz_0" from="E18" to="-E32"/>
+    <trip id="42" depart="7.38" departLane="free" departSpeed="max" fromTaz="taz_1" toTaz="taz_0" from="-E21" to="E36"/>
+    <trip id="2" depart="9.74" departLane="free" departSpeed="max" fromTaz="taz_0" toTaz="taz_1" from="-E32" to="E16"/>
+    <trip id="11" depart="18.04" departLane="free" departSpeed="max" fromTaz="taz_0" toTaz="taz_1" from="-E34" to="-E17"/>
+    <trip id="27" depart="18.13" departLane="free" departSpeed="max" fromTaz="taz_1" toTaz="taz_0" from="-E16" to="E35"/>
+    <trip id="45" depart="37.16" departLane="free" departSpeed="max" fromTaz="taz_1" toTaz="taz_0" from="-E21" to="E36"/>
+    <trip id="5" depart="55.65" departLane="free" departSpeed="max" fromTaz="taz_0" toTaz="taz_1" from="-E32" to="-E21"/>
+    <trip id="32" depart="75.69" departLane="free" departSpeed="max" fromTaz="taz_1" toTaz="taz_0" from="E16" to="-E33"/>
+    <trip id="33" depart="81.70" departLane="free" departSpeed="max" fromTaz="taz_1" toTaz="taz_0" from="-E16" to="E35"/>
+    <trip id="41" depart="88.50" departLane="free" departSpeed="max" fromTaz="taz_1" toTaz="taz_0" from="-E21" to="-E32"/>
+    <trip id="46" depart="101.14" departLane="free" departSpeed="max" fromTaz="taz_1" toTaz="taz_0" from="E17" to="E35"/>
+    <trip id="20" depart="104.50" departLane="free" departSpeed="max" fromTaz="taz_1" toTaz="taz_0" from="-E16" to="E32"/>
+    <trip id="31" depart="104.57" departLane="free" departSpeed="max" fromTaz="taz_1" toTaz="taz_0" from="-E21" to="E33"/>
+    <trip id="29" depart="117.78" departLane="free" departSpeed="max" fromTaz="taz_1" toTaz="taz_0" from="E18" to="E32"/>
+    <trip id="34" depart="125.46" departLane="free" departSpeed="max" fromTaz="taz_1" toTaz="taz_0" from="-E21" to="-E32"/>
+    <trip id="0" depart="128.79" departLane="free" departSpeed="max" fromTaz="taz_0" toTaz="taz_1" from="-E32" to="-E21"/>
+    <trip id="40" depart="137.70" departLane="free" departSpeed="max" fromTaz="taz_1" toTaz="taz_0" from="E17" to="E33"/>
+    <trip id="7" depart="139.35" departLane="free" departSpeed="max" fromTaz="taz_0" toTaz="taz_1" from="E32" to="-E17"/>
+    <trip id="1" depart="140.59" departLane="free" departSpeed="max" fromTaz="taz_0" toTaz="taz_1" from="E34" to="-E17"/>
+    <trip id="35" depart="158.69" departLane="free" departSpeed="max" fromTaz="taz_1" toTaz="taz_0" from="E16" to="E36"/>
+    <trip id="9" depart="162.06" departLane="free" departSpeed="max" fromTaz="taz_0" toTaz="taz_1" from="E33" to="-E18"/>
+    <trip id="17" depart="163.02" departLane="free" departSpeed="max" fromTaz="taz_0" toTaz="taz_1" from="-E33" to="-E16"/>
+    <trip id="3" depart="169.23" departLane="free" departSpeed="max" fromTaz="taz_0" toTaz="taz_1" from="-E36" to="-E21"/>
+    <trip id="15" depart="174.31" departLane="free" departSpeed="max" fromTaz="taz_0" toTaz="taz_1" from="-E35" to="-E21"/>
+    <trip id="10" depart="180.91" departLane="free" departSpeed="max" fromTaz="taz_0" toTaz="taz_1" from="-E33" to="-E18"/>
+    <trip id="12" depart="189.84" departLane="free" departSpeed="max" fromTaz="taz_0" toTaz="taz_1" from="E32" to="-E17"/>
+</routes>
