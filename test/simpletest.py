@@ -1,6 +1,9 @@
 import os
 import sys
-from io import BytesIO
+
+import observations
+import testing
+import reward
 
 # Move to config file
 configuration_file = "demo_circle.sumocfg"
@@ -16,7 +19,7 @@ else:
 from sumolib import checkBinary # Checks for the binary in environ vars
 import traci
 
-pwd = '/Users/gazelpaul/TFM/test/'
+pwd = '/Users/gazelpaul/TFM/TFM_SUMO_RL/test'
 
 # TraCI control loop
 def run():
@@ -26,30 +29,17 @@ def run():
         
         traci.simulationStep()
 
-        if step == 50:
+        if step == 30:
+            print('\n--------------\n')
+            edges = traci.edge.getIDList()
+            for eid in edges:
+                for i in range(traci.edge.getLaneNumber(eid)):
+                    links = traci.lane.getLinks(eid + '_' + str(i))
+                    
+                    for l in links:
+                        print(l)
 
-            temp = BytesIO()
-            view = 'View #0'
 
-            print(traci.gui.hasView(view))
-            print(traci.gui.getBoundary(view))
-
-            #traci.gui.screenshot(view, pwd + 'test.png')
-
-            try:
-                traci.gui.screenshot(view, temp)
-
-            except Exception as e:
-                print(e)
-
-            temp.seek(0)
-
-            content = temp.getvalue()
-            temp.close()
-
-            print(content)
-            print('\n---\n')
-            print(type(content))
 
         step += 1
 
@@ -71,7 +61,6 @@ if __name__ == "__main__":
         '--device.rerouting.period', '1',
         '--device.rerouting.synchronize','True',
         '--device.rerouting.threads', '8',
-        #'--step-length', str(step_duration),
         '-S', '-Q',
     ]
 
