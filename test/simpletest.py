@@ -1,13 +1,11 @@
 import os
 import sys
 
-import observations
 import testing
 import reward
 
 # Move to config file
 configuration_file = "demo_circle.sumocfg"
-step_duration = 1 # In seconds
 
 # we need to import some python modules from the $SUMO_HOME/tools directory
 if 'SUMO_HOME' in os.environ:
@@ -19,32 +17,26 @@ else:
 from sumolib import checkBinary # Checks for the binary in environ vars
 import traci
 
-pwd = '/Users/gazelpaul/TFM/TFM_SUMO_RL/test'
+# get path for image
+directory_path = os.getcwd()
+image_name = "/screenshot.png"
+file_path = directory_path + image_name
+
+
+
+
 
 # TraCI control loop
 def run():
+    
     step = 0
 
     while traci.simulation.getMinExpectedNumber() > 0:
         
         traci.simulationStep()
 
-        if step == 30:
-            print('\n--------------\n')
-            edges = traci.edge.getIDList()
-            for eid in edges:
-                for i in range(traci.edge.getLaneNumber(eid)):
-                    links = traci.lane.getLinks(eid + '_' + str(i))
-                    
-                    for l in links:
-                        print(l)
-
-
 
         step += 1
-
-        if step == 60:
-            break
 
     traci.close()
     sys.stdout.flush()
@@ -52,6 +44,7 @@ def run():
 
 if __name__ == "__main__":
     sumoBinary = checkBinary('sumo-gui')
+    # sumoBinary = checkBinary('sumo')
 
     sumo_cmd = [
         sumoBinary,
@@ -61,6 +54,7 @@ if __name__ == "__main__":
         '--device.rerouting.period', '1',
         '--device.rerouting.synchronize','True',
         '--device.rerouting.threads', '8',
+        '--default.carfollowmodel', 'EIDM',
         '-S', '-Q',
     ]
 

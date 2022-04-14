@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <sumo_configuration>
+        <name value="sumo/osm.sumocfg"/>
+        <net-file value="osm.net.xml"/>
+        <route-file value=""/>
+        <gui-settings-file value="osm.view.xml"/>
+    </sumo_configuration>
+
+    <random_trips>
+        <folder value="sumo/"/>
+        <command value="python"/>
+        <path value="/usr/share/sumo/tools/randomTrips.py"/>
+        <period value="0.8"/>
+        <begin value="0"/>
+        <end value="800"/>
+        <seed value="1"/>
+        <min-distance value="500"/>
+        <fringe-factor value="10"/>
+        <output-trip-file value="sumo/tripfile_output.xml"/>
+        <route-file value="sumo/routefile_output.xml"/>
+    </random_trips>
+
+    <environment>
+        <sumo_gui value="1"/>
+        <initial_max_speed value="50"/>
+        <seconds_between_actions value="600"/>
+        <starting_step value="True"/>
+    </environment>
+
+    <sumo_command>
+        <ignore-route-errors value="True"/>
+        <device.rerouting.probability value="0.25"/>
+        <device.rerouting.period value="1"/>
+        <device.rerouting.synchronize value="True"/>
+        <device.rerouting.threads value="8"/>
+        <step-length value="1"/>
+        <waiting-time-memory value="600"/>
+        <gui-activated value="True"/>
+    </sumo_command>
+
+    <action_space_range>
+        <min value="10"/>
+        <max value="50"/>
+        <step value="5"/>
+    </action_space_range>
+
+    <rl>
+        <n_episodes value="5"/>
+        <max_iterations_ep value="500"/>
+        <batch_size value="32"/>
+    </rl>
+
+    <state_representation>
+        <image_path value="screenshot.png"/>
+    </state_representation>
+</configuration>

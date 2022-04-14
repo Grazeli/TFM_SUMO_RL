@@ -1,0 +1,6 @@
+<configuration>
+    <input>
+        <net-file value="circle_network.net.xml"/>
+        <route-files value="test_route_valid.xml"/>
+    </input>
+</configuration>

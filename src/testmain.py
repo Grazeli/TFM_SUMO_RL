@@ -1,4 +1,4 @@
-import state_representation
+import state_representationOld
 import os
 import sys
 
@@ -11,7 +11,7 @@ else:
 
 import traci
 
-state_class = state_representation.stateFirstTest(traci)
+state_class = state_representationOld.stateFirstTest(traci)
 
 state_class._get_car_ids()
 

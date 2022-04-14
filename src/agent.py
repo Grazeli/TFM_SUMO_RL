@@ -13,9 +13,9 @@ from matplotlib import pyplot as plt
 """
 class DQN:
     def __init__(self, state_size, action_size, batch_size) -> None:
-        self._action_size = action_size
-        self._state_size = state_size
-        self._batch_size = batch_size
+        self.action_size = action_size
+        self.state_size = state_size
+        self.batch_size = batch_size
 
         # Parameters:
         self.lr = 0.001
@@ -26,16 +26,20 @@ class DQN:
         self.memory_buffer = list()
         self.max_memory_buffer = 2000
 
-        self.model = self.define_model()
+        if self.state_size:
+            self.model = self.define_model()
+            self.model_created = True
+        else:
+            self.model_created = False
 
     """
     Define and compile deep neural network model
     """
     def define_model(self):
         model = Sequential()
-        model.add(Dense(24, input_dim = self._state_size, activation='relu'))
+        model.add(Dense(24, input_dim = self.state_size, activation='relu'))
         model.add(Dense(24, activation='relu'))
-        model.add(Dense(self._action_size, activation='linear'))
+        model.add(Dense(self.action_size, activation='linear'))
 
         model.compile(loss='mse', optimizer=Adam(lr=self.lr))
 
@@ -45,8 +49,12 @@ class DQN:
     Get next action
     """
     def compute_action(self, current_state):
+        if not self.model_created:
+            self.state_size = current_state.shape
+            self.define_model()
+
         if np.random.uniform(0, 1) < self.exploration_proba:
-            return np.random.choice(range(self._action_size))
+            return np.random.choice(range(self.action_size))
 
         q_values = self.model.predict(current_state)[0]
 
@@ -73,7 +81,7 @@ class DQN:
 
     def train(self):
         np.random.shuffle(self.memory_buffer)
-        batch_sample = self.memory_buffer[0:self._batch_size]
+        batch_sample = self.memory_buffer[0:self.batch_size]
 
         for experience in batch_sample:
             q_current_state = self.model.predict(experience['current_state'])

@@ -1,0 +1,8 @@
+<configuration>
+    <input>
+        <net-file value="test.xml" />
+        </input>
+        
+        <processing />
+        <gui_only />
+        </configuration>

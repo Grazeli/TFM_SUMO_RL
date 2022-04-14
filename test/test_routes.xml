@@ -1,0 +1,11 @@
+<routes>
+    <vType id="custom1" accel="2.6" decel="4.5" sigma="0.5" tau="1.0" speedFactor="normc(1, 0.1, 0.2, 2)" color="1,1,0" />
+    <trip id="v1" type="custom1" depart="0" fromTaz="taz_1" toTaz="taz_0" />
+    <trip id="v2" type="custom1" depart="5" fromTaz="taz_0" toTaz="taz_1" />
+    <trip id="v3" type="custom1" depart="7" fromTaz="taz_1" toTaz="taz_0" />
+    <trip id="v4" type="custom1" depart="10" fromTaz="taz_0" toTaz="taz_1" />
+    <trip id="v5" type="custom1" depart="11" fromTaz="taz_1" toTaz="taz_0" />
+    <trip id="v6" type="custom1" depart="15" fromTaz="taz_0" toTaz="taz_1" />
+    <trip id="v7" type="custom1" depart="18" fromTaz="taz_1" toTaz="taz_0" />
+    <trip id="v8" type="custom1" depart="20" fromTaz="taz_0" toTaz="taz_1" />
+</routes>
