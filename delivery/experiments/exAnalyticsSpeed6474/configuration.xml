@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <sumo_configuration>
+        <name value="sumo/osm.sumocfg"/>
+        <net-file value="small.net.xml"/>
+        <route-file value="routefile_output.xml"/>
+    </sumo_configuration>
+
+    <random_trips>
+        <folder value="sumo/"/>
+        <command value="python"/>
+        <path value="/usr/share/sumo/tools/randomTrips.py"/>
+        <options>
+            <period value="5"/>
+            <begin value="0"/>
+            <end value="1800"/>
+            <seed value="1"/>
+            <min-distance value="10"/>
+            <fringe-factor value="10"/>
+            <output-trip-file value="tripfile_output.xml"/>
+            <route-file value="routefile_output.xml"/>
+        </options>
+    </random_trips>
+
+    <environment>
+        <initial_max_speed value="50"/>
+        <seconds_between_actions value="60"/>
+        <starting_step value="True"/>
+        <end_step value="2700"/>
+        <state_representation value="edgeAnalytics"/>
+    </environment>
+
+
+    <sumo_command>
+        <ignore-route-errors value="True"/>
+        <device.rerouting.probability value="1"/>
+        <device.rerouting.period value="1"/>
+        <device.rerouting.synchronize value="True"/>
+        <device.rerouting.threads value="8"/>
+        <step-length value="1"/>
+        <waiting-time-memory value="60"/>
+        <gui-activated value="True"/>
+    </sumo_command>
+
+    <action_space_range>
+        <min value="10"/>
+        <max value="50"/>
+    </action_space_range>
+
+    <rl>
+        <n_episodes value="500"/>
+        <max_iterations_ep value="100"/>
+        <batch_size value="32"/>
+        <reward_function value="average_speed"/>
+    </rl>
+
+    <agent>
+        <learning_rate value="0.0005"/>
+        <gamma value="0.99"/>
+        <exploration_proba_decay value="0.02"/>
+        <memory_size value="2000"/>
+    </agent>
+
+    <result>
+        <folder value="result"/>
+    </result>
+
+    <event>
+        <steps value="20"/>
+        <edge value="E23 -E23"/>
+    </event>
+
+    <state_representation>
+        <image_path value="tmp/screenshot.png"/>
+    </state_representation>
+</configuration>
