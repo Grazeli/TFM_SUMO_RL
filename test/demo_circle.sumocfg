@@ -1,6 +1,0 @@
-<configuration>
-    <input>
-        <net-file value="circle_network.net.xml"/>
-        <route-files value="odtrips_valid.xml"/>
-    </input>
-</configuration>
